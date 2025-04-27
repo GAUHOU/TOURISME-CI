@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FESTIMA | Côte d'Ivoire Tourisme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(to right, rgba(124, 45, 18, 0.8), rgba(194, 65, 12, 0.7));
+        }
+        
+        .animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .flag-stripe {
+            height: 33.33%;
+            width: 100%;
+        }
+        
+        .flag-orange { background-color: #f77f00; }
+        .flag-white { background-color: white; }
+        .flag-green { background-color: #009a44; }
+        
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .mask-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="w-6 h-6 mr-2 overflow-hidden rounded-sm">
+                            <div class="flag-stripe flag-orange"></div>
+                            <div class="flag-stripe flag-white"></div>
+                            <div class="flag-stripe flag-green"></div>
+                        </div>
+                        <span class="text-xl font-bold text-orange-800">Côte d'Ivoire Tourisme</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-orange-500 font-medium transition">Accueil</a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500 font-medium transition">Destinations</a>
+                    <a href="#" class="text-orange-700 hover:text-orange-500 font-medium transition">Culture</a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500 font-medium transition">Contact</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-orange-500">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-overlay"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605000759870-6a6d1e4636ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80')] parallax"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center animate-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    FESTIMA
+                </h1>
+                <div class="flex justify-center items-center space-x-4">
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span>Diverses localités</span>
+                    </div>
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Avril (tous les 2 ans)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute -bottom-10 left-0 right-0 flex justify-center z-20 mask-animation animate-in" style="transition-delay: 0.3s">
+            <img src="https://via.placeholder.com/200x250" alt="Masque FESTIMA" class="h-48 md:h-64 object-contain">
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="pt-20 pb-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex lg:items-start lg:gap-12">
+                <div class="lg:w-2/3 animate-in">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Le festival international des masques africains</h2>
+                    <div class="w-20 h-1 bg-orange-500 mb-6"></div>
+                    
+                    <div class="prose max-w-none text-gray-600 mb-8">
+                        <p class="text-lg">
+                            Le FESTIMA (Festival International des Masques et des Arts) est un événement culturel majeur qui rassemble tous les deux ans des troupes traditionnelles venues de toute l'Afrique de l'Ouest pour célébrer l'art du masque sous toutes ses formes.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Origines et signification</h3>
+                        <p>
+                            Créé en 1996 à Dédougou au Burkina Faso, le festival a lieu alternativement dans différents pays de la sous-région. La Côte d'Ivoire a accueilli cette manifestation en 2018 et 2022, avec des éditions mémorables qui ont attiré des milliers de visiteurs.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Déroulement du festival</h3>
+                        <p>
+                            Pendant plusieurs jours, le festival propose :
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Des spectacles de masques venus de toute l'Afrique de l'Ouest</li>
+                            <li>Des conférences sur le rôle des masques dans les sociétés africaines</li>
+                            <li>Des ateliers de transmission des savoirs aux jeunes générations</li>
+                            <li>Un grand marché artisanal présentant des créations de toute la région</li>
+                            <li>Des échanges culturels entre les différentes délégations</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Les masques à l'honneur</h3>
+                        <p>
+                            Le FESTIMA met en valeur la diversité des traditions masquées ouest-africaines :
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-orange-700">Masques Dan (Côte d'Ivoire)</h4>
+                                <p class="text-sm">Célèbres pour leur beauté et leur rôle dans la justice traditionnelle</p>
+                            </div>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-orange-700">Masques Dogon (Mali)</h4>
+                                <p class="text-sm">Reconnus pour leurs cérémonies funéraires impressionnantes</p>
+                            </div>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-orange-700">Masques Bwa (Burkina Faso)</h4>
+                                <p class="text-sm">Grands masques plats aux motifs géométriques</p>
+                            </div>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-orange-700">Masques Gelede (Bénin)</h4>
+                                <p class="text-sm">Dédiés à la célébration des mères et de la fécondité</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-500 animate-in" style="transition-delay: 0.2s">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                            <i class="fas fa-lightbulb text-orange-500 mr-3"></i>
+                            Conseils pour les visiteurs
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                                <span>Respectez les interdits : certains masques ne doivent pas être photographiés</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                                <span>Prévoyez plusieurs jours pour profiter pleinement de l'événement</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                                <span>Assistez aux conférences pour mieux comprendre les traditions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                                <span>Profitez du marché artisanal pour des souvenirs authentiques</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/3 mt-12 lg:mt-0 animate-in" style="transition-delay: 0.1s">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden sticky top-6">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Informations pratiques</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-calendar-day text-orange-500 mr-3"></i>
+                                        Prochaine édition
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Avril 2024 (dates exactes à confirmer)</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-map-marked-alt text-orange-500 mr-3"></i>
+                                        Lieux principaux
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Site principal à déterminer (alternance entre pays)</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-hotel text-orange-500 mr-3"></i>
+                                        Hébergement
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Réservation recommandée dès l'annonce des dates</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-ticket-alt text-orange-500 mr-3"></i>
+                                        Accès
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Pass journée ou pass festival disponible</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Programme type</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-sun text-orange-600"></i>
+                                    </div>
+                                    <span>Jour 1 : Cérémonie d'ouverture et parade internationale</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-users text-orange-600"></i>
+                                    </div>
+                                    <span>Jours 2-3 : Spectacles par pays et conférences</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-hands-helping text-orange-600"></i>
+                                    </div>
+                                    <span>Jour 4 : Ateliers d'échanges interculturels</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-fire text-orange-600"></i>
+                                    </div>
+                                    <span>Jour 5 : Grande parade finale et clôture</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center animate-in">Galerie du FESTIMA</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.1s">
+                    <img src="https://www.aip.ci/wp-content/uploads/2024/08/Ficad-ouverture.jpeg" 
+                         alt="Parade FESTIMA" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Grand défilé d'ouverture avec toutes les délégations</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.2s">
+                    <img src="https://cdn.shopify.com/s/files/1/0275/6483/4885/files/Les_masques_tribaux_Africains_et_leur_signification_3.jpg?v=1623606982" 
+                         alt="Masques africains" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Diversité des masques traditionnels africains</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.3s">
+                    <img src="https://c.files.bbci.co.uk/5460/production/_99100612_zaouli.jpg" 
+                         alt="Danses traditionnelles" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Spectacles de danses masquées</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.4s">
+                    <img src="https://loisirs.mamafrica.net/wp-content/uploads/2021/02/thumb_dscn0556_1024-1024x768-740x480727372644-1.jpg" 
+                         alt="Artisanat africain" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Marché artisanal avec créations locales</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.5s">
+                    <img src="https://lefaso.net/IMG/jpg/visite-du-ministre.jpg" 
+                         alt="Public du FESTIMA" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Public international venu assister aux spectacles</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.6s">
+                    <img src="https://aime-ong.org/wp-content/uploads/2022/11/316003617_129373016590288_6494177140656581917_n-1-1024x666.jpg" 
+                         alt="Clôture du FESTIMA" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Grande parade finale de clôture</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center animate-in">Localisation</h2>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.2s">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1010291.0766231164!2d-4.3520827!3d5.3599517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1f8e5b6e9a415%3A0x4c9d30c1a5a5b5b5!2sMan%2C%20C%C3%B4te%20d&#39;Ivoire!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    class="w-full h-96">
+                </iframe>
+            </div>
+            
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-orange-50 p-6 rounded-lg animate-in" style="transition-delay: 0.3s">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-car text-orange-600 mr-3"></i>
+                        Comment y aller ?
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>En avion</strong> : Aéroport international le plus proche selon l'édition</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>En voiture</strong> : Accès routier depuis les pays voisins</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Navettes</strong> : Transport organisé depuis les grandes villes</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-orange-50 p-6 rounded-lg animate-in" style="transition-delay: 0.4s">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-bed text-orange-600 mr-3"></i>
+                        Où loger ?
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Hôtels</strong> : Réservation très conseillée à l'avance</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Guesthouses</strong> : Alternative plus économique</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Camping</strong> : Parfois organisé près du site du festival</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-orange-50 p-6 rounded-lg animate-in" style="transition-delay: 0.5s">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-utensils text-orange-600 mr-3"></i>
+                        Où manger ?
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Restauration sur place</strong> : Spécialités locales et internationales</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Maquis locaux</strong> : Pour une expérience culinaire authentique</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Marchés</strong> : Découverte des produits locaux</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center animate-in">Témoignages</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md animate-in" style="transition-delay: 0.1s">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Amina Traoré" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Amina Traoré</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Le FESTIMA est une merveilleuse occasion de découvrir la richesse des traditions masquées africaines. L'édition ivoirienne était particulièrement bien organisée."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        Participante 2022
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md animate-in" style="transition-delay: 0.2s">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Jean Dupont" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Jean Dupont</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "En tant qu'européen, le FESTIMA a été une révélation. La puissance des performances et la diversité des masques m'ont profondément marqué."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        Visiteur 2018
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md animate-in" style="transition-delay: 0.3s">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Kwame Nkrumah" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Kwame Nkrumah</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Le FESTIMA montre que nos traditions africaines sont vivantes et capables de rassembler des gens du monde entier. Une fierté pour notre continent."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        Journaliste culturel
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-orange-600 to-orange-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt pour le prochain FESTIMA ?</h2>
+                <p class="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
+                    Inscrivez-vous pour recevoir les informations sur la prochaine édition de ce festival unique.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#" class="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md shadow-sm text-orange-700 bg-white hover:bg-gray-100 transition transform hover:scale-105">
+                        S'inscrire à la newsletter
+                        <i class="fas fa-envelope ml-2"></i>
+                    </a>
+                    <a href="#" class="inline-flex items-center px-8 py-4 border border-white text-lg font-medium rounded-md shadow-sm text-white hover:bg-white/10 transition transform hover:scale-105">
+                        Voir les autres festivals
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize animation on load
+        window.addEventListener('load', animateOnScroll);
+        // Animate on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>

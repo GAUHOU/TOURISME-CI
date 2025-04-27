@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carnaval d'Abidjan | Côte d'Ivoire Tourisme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(to right, rgba(124, 45, 18, 0.8), rgba(194, 65, 12, 0.7));
+        }
+        
+        .animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .flag-stripe {
+            height: 33.33%;
+            width: 100%;
+        }
+        
+        .flag-orange { background-color: #f77f00; }
+        .flag-white { background-color: white; }
+        .flag-green { background-color: #009a44; }
+        
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .carnival-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .music-note {
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="w-6 h-6 mr-2 overflow-hidden rounded-sm">
+                            <div class="flag-stripe flag-orange"></div>
+                            <div class="flag-stripe flag-white"></div>
+                            <div class="flag-stripe flag-green"></div>
+                        </div>
+                        <span class="text-xl font-bold text-orange-800">Côte d'Ivoire Tourisme</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-orange-500 font-medium transition">Accueil</a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500 font-medium transition">Destinations</a>
+                    <a href="#" class="text-orange-700 hover:text-orange-500 font-medium transition">Culture</a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500 font-medium transition">Contact</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-orange-500">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-overlay"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605000759870-6a6d1e4636ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80')] parallax"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center animate-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    Carnaval d'Abidjan
+                </h1>
+                <div class="flex justify-center items-center space-x-4">
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span>Abidjan, quartier du Plateau</span>
+                    </div>
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Mars/Avril</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute -bottom-10 left-0 right-0 flex justify-center z-20 carnival-animation animate-in" style="transition-delay: 0.3s">
+            <div class="relative">
+                <img src="https://via.placeholder.com/200x150" alt="Char carnaval" class="h-48 md:h-64 object-contain">
+                <i class="fas fa-music text-yellow-400 text-3xl absolute -top-6 -right-6 music-note"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="pt-20 pb-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex lg:items-start lg:gap-12">
+                <div class="lg:w-2/3 animate-in">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">La fête urbaine la plus colorée de Côte d'Ivoire</h2>
+                    <div class="w-20 h-1 bg-orange-500 mb-6"></div>
+                    
+                    <div class="prose max-w-none text-gray-600 mb-8">
+                        <p class="text-lg">
+                            Le Carnaval d'Abidjan est l'événement festif et culturel le plus attendu de la capitale économique ivoirienne. Ce défilé haut en couleur mêle traditions africaines et modernité urbaine dans une ambiance électrique.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Origines et évolution</h3>
+                        <p>
+                            Lancé en 2012, le Carnaval d'Abidjan s'est rapidement imposé comme un rendez-vous incontournable. Inspiré à la fois des carnavals brésiliens et des fêtes traditionnelles ivoiriennes, il célèbre la diversité culturelle du pays et la vitalité de sa jeunesse.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Déroulement du carnaval</h3>
+                        <p>
+                            Pendant deux jours, le carnaval transforme Abidjan en une immense scène à ciel ouvert :
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Grand défilé avec chars décorés et groupes costumés</li>
+                            <li>Performances musicales live (coupé-décalé, zouglou, etc.)</li>
+                            <li>Danses traditionnelles revisitées façon urbaine</li>
+                            <li>Concours du plus beau costume et du meilleur char</li>
+                            <li>Village gastronomique avec spécialités locales</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Les temps forts</h3>
+                        <p>
+                            Chaque édition apporte son lot de surprises et de créations :
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-orange-700">Défilé des Reines</h4>
+                                <p class="text-sm">Élection de la Reine du Carnaval et de ses dauphines</p>
+                            </div>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-orange-700">Parade des Géants</h4>
+                                <p class="text-sm">Figurines géantes représentant la culture ivoirienne</p>
+                            </div>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-orange-700">Block Party</h4>
+                                <p class="text-sm">Scènes musicales installées dans différents quartiers</p>
+                            </div>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-orange-700">Feu d'artifice</h4>
+                                <p class="text-sm">Grand final pyrotechnique sur la lagune Ébrié</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-500 animate-in" style="transition-delay: 0.2s">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                            <i class="fas fa-lightbulb text-orange-500 mr-3"></i>
+                            Conseils pour les visiteurs
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                                <span>Arrivez tôt pour avoir une bonne place le long du parcours</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                                <span>Prévoyez des vêtements légers et des chaussures confortables</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                                <span>Protégez-vous du soleil (casquette, crème solaire)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                                <span>Participez à l'ambiance en apprenant quelques pas de danse</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/3 mt-12 lg:mt-0 animate-in" style="transition-delay: 0.1s">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden sticky top-6">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Informations pratiques</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-calendar-day text-orange-500 mr-3"></i>
+                                        Prochaine édition
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">15-16 Avril 2024</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-map-marked-alt text-orange-500 mr-3"></i>
+                                        Parcours
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Plateau > Treichville > Marcory</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-hotel text-orange-500 mr-3"></i>
+                                        Hébergement
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Nombreux hôtels disponibles dans tous les quartiers</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-ticket-alt text-orange-500 mr-3"></i>
+                                        Accès
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Gratuit pour le défilé, payant pour les concerts</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Programme type</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-route text-orange-600"></i>
+                                    </div>
+                                    <span>Jour 1 : Grand défilé dans les rues d'Abidjan (10h-18h)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-music text-orange-600"></i>
+                                    </div>
+                                    <span>Soirée : Concerts géants sur plusieurs scènes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-utensils text-orange-600"></i>
+                                    </div>
+                                    <span>Jour 2 : Village gastronomique et animations</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-fire text-orange-600"></i>
+                                    </div>
+                                    <span>Clôture : Feu d'artifice sur la lagune</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center animate-in">Galerie du Carnaval</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.1s">
+                    <img src="https://www.cotedivoireblog.com/wp-content/uploads/2020/04/MASA-DESFIL%C3%89-1.jpg" 
+                         alt="Défilé carnaval" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Grand défilé coloré dans les rues d'Abidjan</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.2s">
+                    <img src="https://media-files.abidjan.net/photo/masa-2022-abidjan-danse-parade-lance-les-hostilites-de-la-12e-edition-a-yop_51pu55yhtr.jpg" 
+                         alt="Chars décorés" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Chars spectaculaires réalisés par les différents quartiers</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.3s">
+                    <img src="https://pbs.twimg.com/media/D50pUXdW4AM-kAO.jpg" 
+                         alt="Costumes" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Costumes extravagants et colorés des participants</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.4s">
+                    <img src="https://www.ateliers-frappaz.com/wp-content/uploads/2020/03/masa17Abidjan-Danse-Parade-2020-Masa-Marche%CC%81-des-arts-du-spectacle-dAbidjan-et-Les-Ateliers-Frappaz-%C2%A9Masa.jpg" 
+                         alt="Danseurs" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Groupes de danseurs énergiques accompagnant les chars</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.5s">
+                    <img src="https://www.solibra.ci/files/images/photo060522170014-photo7.jpg" 
+                         alt="Public" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Public enthousiaste venu en nombre pour l'événement</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.6s">
+                    <img src="https://media-files.abidjan.net/photo/Feux_artifices2%20(14)%20(Grand).JPG" 
+                         alt="Feu d'artifice" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Spectacle pyrotechnique final sur la lagune Ébrié</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center animate-in">Parcours du défilé</h2>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.2s">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126903.304175356!2d-4.0525916!3d5.320357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1eb6f7d0255a5%3A0x8df53a8f2a3c51b6!2sAbidjan%2C%20C%C3%B4te%20d&#39;Ivoire!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    class="w-full h-96">
+                </iframe>
+            </div>
+            
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-orange-50 p-6 rounded-lg animate-in" style="transition-delay: 0.3s">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-car text-orange-600 mr-3"></i>
+                        Comment circuler ?
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Métro</strong> : Ligne 1 (station Plateau)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Bus SOTRA</strong> : Nombreuses lignes desservant le parcours</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Taxi</strong> : Prévoir des retards en raison de la foule</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-orange-50 p-6 rounded-lg animate-in" style="transition-delay: 0.4s">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-eye text-orange-600 mr-3"></i>
+                        Meilleurs spots
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Place de la République</strong> : Départ du défilé</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Pont Houphouët-Boigny</strong> : Vue spectaculaire</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Boulevard Lagunaire</strong> : Arrivée et feu d'artifice</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-orange-50 p-6 rounded-lg animate-in" style="transition-delay: 0.5s">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-utensils text-orange-600 mr-3"></i>
+                        Où manger ?
+                    </h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Village gastronomique</strong> : Spécialités de toute la Côte d'Ivoire</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Maquis du Plateau</strong> : Ambiance garantie</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                            <span><strong>Restaurants lagunaires</strong> : Vue sur le feu d'artifice</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center animate-in">Témoignages</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md animate-in" style="transition-delay: 0.1s">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sophie Martin" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Fatou Diarra</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "J'ai participé au carnaval avec mon groupe de danse et c'était incroyable ! L'énergie de la foule, la musique, les couleurs... Une expérience que je recommande à tous."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        Danseuse, participante 2023
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md animate-in" style="transition-delay: 0.2s">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Thomas Leroy" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Jean-Luc Dubois</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "En tant que photographe, le Carnaval d'Abidjan est une mine d'or. Les costumes, les expressions, les mouvements... Chaque cliché raconte une histoire."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        Photographe, visiteur 2022
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md animate-in" style="transition-delay: 0.3s">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Fatoumata Bamba" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Amina Koné</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Le Carnaval montre la jeunesse et la vitalité d'Abidjan. Voir toutes ces communautés célébrer ensemble notre culture commune, c'est vraiment magique."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        Étudiante, visiteuse 2023
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-orange-600 to-orange-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à vivre le Carnaval ?</h2>
+                <p class="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
+                    Inscrivez-vous pour recevoir le programme complet et nos conseils pour profiter au maximum de l'événement.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#" class="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md shadow-sm text-orange-700 bg-white hover:bg-gray-100 transition transform hover:scale-105">
+                        S'inscrire à la newsletter
+                        <i class="fas fa-envelope ml-2"></i>
+                    </a>
+                    <a href="#" class="inline-flex items-center px-8 py-4 border border-white text-lg font-medium rounded-md shadow-sm text-white hover:bg-white/10 transition transform hover:scale-105">
+                        Voir les autres festivals
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize animation on load
+        window.addEventListener('load', animateOnScroll);
+        // Animate on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>

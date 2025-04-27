@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fête de l'Indépendance | Côte d'Ivoire Tourisme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(to right, rgba(20, 83, 45, 0.8), rgba(22, 101, 52, 0.7));
+        }
+        
+        .animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .flag-stripe {
+            height: 33.33%;
+            width: 100%;
+        }
+        
+        .flag-orange { background-color: #f77f00; }
+        .flag-white { background-color: white; }
+        .flag-green { background-color: #009a44; }
+        
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .firework-animation {
+            position: relative;
+        }
+        
+        .firework-animation::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, transparent 20%, rgba(255,255,255,0.1) 20%, rgba(255,255,255,0.1) 80%, transparent 80%);
+            background-size: 10px 10px;
+            animation: firework 3s infinite;
+            opacity: 0;
+        }
+        
+        @keyframes firework {
+            0% { transform: scale(0.5); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .wave-animation {
+            animation: wave 6s linear infinite;
+        }
+        
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="w-6 h-6 mr-2 overflow-hidden rounded-sm">
+                            <div class="flag-stripe flag-orange"></div>
+                            <div class="flag-stripe flag-white"></div>
+                            <div class="flag-stripe flag-green"></div>
+                        </div>
+                        <span class="text-xl font-bold text-orange-800">Côte d'Ivoire Tourisme</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-orange-500 font-medium transition">Accueil</a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500 font-medium transition">Destinations</a>
+                    <a href="#" class="text-orange-700 hover:text-orange-500 font-medium transition">Culture</a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500 font-medium transition">Contact</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-orange-500">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-overlay"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605000759870-6a6d1e4636ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80')] parallax"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center animate-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    Fête de l'Indépendance
+                </h1>
+                <div class="flex justify-center items-center space-x-4">
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        <span>Tout le pays</span>
+                    </div>
+                    <div class="flex items-center text-white">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>7 Août</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute -bottom-10 left-0 right-0 flex justify-center z-20 animate-in" style="transition-delay: 0.3s">
+            <div class="relative firework-animation">
+                <img src="https://via.placeholder.com/200x150" alt="Drapeau ivoirien" class="h-48 md:h-64 object-contain">
+                <div class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 fire-animation text-orange-500 text-4xl">
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="pt-20 pb-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex lg:items-start lg:gap-12">
+                <div class="lg:w-2/3 animate-in">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Célébration Nationale</h2>
+                    <div class="w-20 h-1 bg-green-600 mb-6"></div>
+                    
+                    <div class="prose max-w-none text-gray-600 mb-8">
+                        <p class="text-lg">
+                            Le 7 août 1960, la Côte d'Ivoire accédait à l'indépendance après plus de 60 ans de colonisation française. Chaque année, cette date historique est célébrée dans tout le pays avec ferveur et patriotisme.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Signification historique</h3>
+                        <p>
+                            La Fête de l'Indépendance commémore la proclamation de l'indépendance par Félix Houphouët-Boigny, premier président de la République. Cette journée symbolise la souveraineté retrouvée et l'unité nationale.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Célébrations principales</h3>
+                        <p>
+                            Les festivités officielles se déroulent principalement à Abidjan et Yamoussoukro, mais toutes les villes du pays organisent des manifestations :
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Grand défilé militaire et civil sur l'avenue de la République</li>
+                            <li>Prise d'armes et discours présidentiel</li>
+                            <li>Spectacles culturels mettant en valeur les traditions ivoiriennes</li>
+                            <li>Feux d'artifice dans les grandes villes</li>
+                            <li>Concerts géants avec des artistes nationaux</li>
+                            <li>Décoration des bâtiments publics aux couleurs nationales</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Particularités régionales</h3>
+                        <p>
+                            Chaque région apporte sa touche aux célébrations :
+                        </p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-700">Abidjan</h4>
+                                <p class="text-sm">Grand parade au Stade Félix Houphouët-Boigny et feux d'artifice sur la lagune</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-700">Yamoussoukro</h4>
+                                <p class="text-sm">Cérémonie officielle à la Fondation Félix Houphouët-Boigny</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-700">Bouaké</h4>
+                                <p class="text-sm">Défilé traditionnel des groupes ethniques du centre</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-700">San Pedro</h4>
+                                <p class="text-sm">Regatta de pirogues et fête du poisson</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-xl border-l-4 border-green-600 animate-in" style="transition-delay: 0.2s">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                            <i class="fas fa-lightbulb text-green-600 mr-3"></i>
+                            Conseils pour les visiteurs
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                                <span>Arriver tôt pour les défilés (les meilleures places partent vite)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                                <span>Porter des vêtements aux couleurs nationales (orange, blanc, vert)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                                <span>Prévoir de la crème solaire et un chapeau (fort ensoleillement en août)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-600 mt-1 mr-2"></i>
+                                <span>Goûter aux spécialités culinaires des stands de rue</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/3 mt-12 lg:mt-0 animate-in" style="transition-delay: 0.1s">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden sticky top-6">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Informations pratiques</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-calendar-day text-green-600 mr-3"></i>
+                                        Date
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">7 Août (fermeture administrations et banques)</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-map-marked-alt text-green-600 mr-3"></i>
+                                        Lieux principaux
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Abidjan, Yamoussoukro et toutes les capitales régionales</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-clock text-green-600 mr-3"></i>
+                                        Horaires
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Défilé à 9h, feux d'artifice à 20h</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-ticket-alt text-green-600 mr-3"></i>
+                                        Accès
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Gratuit et ouvert à tous</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Programme type</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-flag text-green-600"></i>
+                                    </div>
+                                    <span>Matin : Levée des couleurs et prise d'armes</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-march text-green-600"></i>
+                                    </div>
+                                    <span>9h-12h : Grand défilé civil et militaire</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-utensils text-green-600"></i>
+                                    </div>
+                                    <span>Midi : Repas communautaires dans les quartiers</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-music text-green-600"></i>
+                                    </div>
+                                    <span>Après-midi : Concerts et animations culturelles</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-green-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-fire text-green-600"></i>
+                                    </div>
+                                    <span>Soirée : Feux d'artifice et fêtes populaires</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center animate-in">Moments forts</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.1s">
+                    <img src="https://media-files.abidjan.net/photo/Independance-56ans-CIV-0049.jpg" 
+                         alt="Défilé militaire" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Défilé militaire impressionnant sur l'avenue de la République</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.2s">
+                    <img src="https://media-files.abidjan.net/photo/Independance-56ans-CIV-0057.jpg" 
+                         alt="Spectacle culturel" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Spectacles culturels mettant en valeur la diversité ivoirienne</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.3s">
+                    <img src="https://www.fratmat.info/media/k2/items/cache/d27d1918e2bad3e45deddf090f54ee4a_XL.jpg" 
+                         alt="Feux d'artifice" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Feux d'artifice illuminant le ciel des grandes villes</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.4s">
+                    <img src="https://media-files.abidjan.net/photo/IMG_1344(5).jpg" 
+                         alt="Drapeaux" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Décoration des rues aux couleurs nationales</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.5s">
+                    <img src="https://www.musicinafrica.net/sites/default/files/styles/article_slider_large/public/images/article/201506/unescenelive.jpg?itok=EfyxAeF8" 
+                         alt="Concert" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Concerts géants avec les stars de la musique ivoirienne</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.6s">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7pdS9R3UqbM5In0zG1lj3HNkTt8NRAUQh3xJz09GWzfN6910rOAs-6MHx01GmmdLRo2U&usqp=CAU" 
+                         alt="Foule en liesse" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Ambiance festive dans les rues jusqu'au petit matin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center animate-in">À ne pas manquer</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-green-50 rounded-xl p-6 shadow-md animate-in" style="transition-delay: 0.1s">
+                    <div class="text-green-600 text-4xl mb-4">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Levée des couleurs</h3>
+                    <p class="text-gray-600">
+                        Moment solennel au lever du jour où le drapeau national est hissé au son de l'hymne national, souvent en présence du Président de la République.
+                    </p>
+                </div>
+                
+                <div class="bg-orange-50 rounded-xl p-6 shadow-md animate-in" style="transition-delay: 0.2s">
+                    <div class="text-orange-600 text-4xl mb-4">
+                        <i class="fas fa-march"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Défilé des régions</h3>
+                    <p class="text-gray-600">
+                        Chaque région présente ses spécificités culturelles à travers costumes, danses et chants traditionnels dans un défilé haut en couleurs.
+                    </p>
+                </div>
+                
+                <div class="bg-yellow-50 rounded-xl p-6 shadow-md animate-in" style="transition-delay: 0.3s">
+                    <div class="text-yellow-600 text-4xl mb-4">
+                        <i class="fas fa-chess-queen"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Reines de beauté</h3>
+                    <p class="text-gray-600">
+                        Les miss et reines de beauté des différentes régions défilent en tenues traditionnelles, représentant la diversité culturelle du pays.
+                    </p>
+                </div>
+                
+                <div class="bg-red-50 rounded-xl p-6 shadow-md animate-in" style="transition-delay: 0.4s">
+                    <div class="text-red-600 text-4xl mb-4">
+                        <i class="fas fa-drum"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Ballets traditionnels</h3>
+                    <p class="text-gray-600">
+                        Spectacles de danses et rythmes traditionnels avec les célèbres tam-tams parleurs et les ballets de masques sacrés.
+                    </p>
+                </div>
+                
+                <div class="bg-blue-50 rounded-xl p-6 shadow-md animate-in" style="transition-delay: 0.5s">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Feux d'artifice</h3>
+                    <p class="text-gray-600">
+                        Spectacle pyrotechnique grandiose synchronisé avec la musique, illuminant les monuments emblématiques des grandes villes.
+                    </p>
+                </div>
+                
+                <div class="bg-purple-50 rounded-xl p-6 shadow-md animate-in" style="transition-delay: 0.6s">
+                    <div class="text-purple-600 text-4xl mb-4">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Cuisine de rue</h3>
+                    <p class="text-gray-600">
+                        Dégustation des spécialités culinaires de toutes les régions dans les stands installés pour l'occasion.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center animate-in">Témoignages</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md animate-in" style="transition-delay: 0.1s">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Koffi N'Guessan" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Koffi N'Guessan</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Chaque 7 août, je ressens une immense fierté d'être Ivoirien. Le défilé militaire et les spectacles culturels montrent la force et la beauté de notre nation."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        Habitant d'Abidjan
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md animate-in" style="transition-delay: 0.2s">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sophie Martin" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Sophie Martin</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "J'ai assisté aux célébrations lors de mon séjour en Côte d'Ivoire. L'énergie, les couleurs et la joie de vivre étaient contagieuses ! Un souvenir inoubliable."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        Touriste française
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md animate-in" style="transition-delay: 0.3s">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Aminata Koné" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Aminata Koné</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Notre groupe de danse participe chaque année au défilé culturel. C'est un honneur de représenter notre région et de montrer nos traditions au pays entier."
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        Danseuse traditionnelle
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-green-600 to-green-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Vivez l'Indépendance en Côte d'Ivoire !</h2>
+                <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+                    Découvrez l'énergie et la fierté d'une nation à travers ses célébrations les plus emblématiques.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#" class="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md shadow-sm text-green-700 bg-white hover:bg-gray-100 transition transform hover:scale-105">
+                        Programmer votre visite
+                        <i class="fas fa-calendar-check ml-2"></i>
+                    </a>
+                    <a href="#" class="inline-flex items-center px-8 py-4 border border-white text-lg font-medium rounded-md shadow-sm text-white hover:bg-white/10 transition transform hover:scale-105">
+                        Voir autres événements
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize animation on load
+        window.addEventListener('load', animateOnScroll);
+        // Animate on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>

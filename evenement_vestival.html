@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festivals & Événements | Côte d'Ivoire Tourisme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(to right, rgba(124, 45, 18, 0.8), rgba(194, 65, 12, 0.7));
+        }
+        
+        .animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .flag-stripe {
+            height: 33.33%;
+            width: 100%;
+        }
+        
+        .flag-orange { background-color: #f77f00; }
+        .flag-white { background-color: white; }
+        .flag-green { background-color: #009a44; }
+        
+        .festival-card {
+            transition: all 0.3s ease;
+        }
+        
+        .festival-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .calendar-month {
+            transition: all 0.3s ease;
+        }
+        
+        .calendar-month:hover {
+            transform: scale(1.03);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <div class="w-6 h-6 mr-2 overflow-hidden rounded-sm">
+                            <div class="flag-stripe flag-orange"></div>
+                            <div class="flag-stripe flag-white"></div>
+                            <div class="flag-stripe flag-green"></div>
+                        </div>
+                        <span class="text-xl font-bold text-orange-800">Côte d'Ivoire Tourisme</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-orange-500 font-medium transition">Accueil</a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500 font-medium transition">Destinations</a>
+                    <a href="#" class="text-orange-700 hover:text-orange-500 font-medium transition">Culture</a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500 font-medium transition">Contact</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-orange-500">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-overlay"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605000759870-6a6d1e4636ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80')] parallax"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center animate-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    Festivals & Événements
+                </h1>
+                <p class="text-xl md:text-2xl text-orange-200 font-medium mb-8 max-w-3xl mx-auto">
+                    Découvrez la richesse culturelle de la Côte d'Ivoire à travers ses célébrations hautes en couleur
+                </p>
+                <a href="#calendrier" class="inline-flex items-center px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-medium rounded-lg shadow-lg transition transform hover:scale-105 animate-in pulse-animation" style="transition-delay: 0.2s">
+                    Voir le calendrier culturel
+                    <i class="fas fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 animate-in">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">La culture en fête</h2>
+                <div class="w-20 h-1 bg-orange-500 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    La Côte d'Ivoire vibre au rythme de ses nombreux festivals culturels tout au long de l'année. 
+                    Ces événements hauts en couleur célèbrent la diversité culturelle du pays et ses traditions vivantes.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-orange-50 p-8 rounded-xl text-center animate-in" style="transition-delay: 0.1s">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-mask text-orange-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Masques sacrés</h3>
+                    <p class="text-gray-600">
+                        Découvrez les traditions ancestrales des différentes ethnies à travers leurs masques rituels.
+                    </p>
+                </div>
+                
+                <div class="bg-orange-50 p-8 rounded-xl text-center animate-in" style="transition-delay: 0.2s">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-music text-orange-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Musiques & Danses</h3>
+                    <p class="text-gray-600">
+                        Vibrations rythmées du zouglou au coupé-décalé en passant par les danses traditionnelles.
+                    </p>
+                </div>
+                
+                <div class="bg-orange-50 p-8 rounded-xl text-center animate-in" style="transition-delay: 0.3s">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6 mx-auto">
+                        <i class="fas fa-utensils text-orange-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Gastronomie</h3>
+                    <p class="text-gray-600">
+                        Saveurs authentiques et spécialités locales à découvrir lors des fêtes populaires.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Festivals Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center animate-in">Festivals incontournables</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Festival 1 -->
+                <div class="festival-card bg-white rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.1s">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://man-info.net/wp-content/uploads/2017/11/masques05.jpg" 
+                             alt="Festival des Masques de Man" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">POPULAIRE</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Festival des Masques de Man</h3>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>
+                            Man, région des 18 montagnes
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Événement emblématique mettant en scène les masques sacrés des peuples Dan et Wè. Spectacles de danses traditionnelles et rituels ancestraux.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-orange-600 font-medium">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                Février/Mars
+                            </div>
+                            <a href="./festival_masques_man.html" class="text-orange-600 hover:text-orange-700 font-medium flex items-center">
+                                En savoir plus
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Festival 2 -->
+                <div class="festival-card bg-white rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.2s">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj07wejFDqCzgagbVMAvwh0W36WJN1xZ7UQ_DomiR98aAn9rslNQ2ec8rEgYJEptzRj26wcSAa1W7cbP3CdelLh3Qpb3qBtAFbrjbkCJj7AwFMdb2AkWqzn79cBSF0raVB1Awa_d1n_ZwKdZ4HO1Lu4_ZnsJRwl6SmDVBvub2CK8qunK_Zn5PONui2UJB4/s750/Africa%20Exclusive%20-%20FESTIVAL%20DES%20MASQUES%20-%20Pari%20r%C3%A9ussi%20pour%20Porto-Novo.png" 
+                             alt="FESTIMA" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">FESTIMA</h3>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>
+                            Diverses localités
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Festival International des Masques et des Arts réunissant des troupes venues de toute l'Afrique de l'Ouest pour célébrer l'art du masque.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-orange-600 font-medium">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                Avril (tous les 2 ans)
+                            </div>
+                            <a href="./festima.html" class="text-orange-600 hover:text-orange-700 font-medium flex items-center">
+                                En savoir plus
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Festival 3 -->
+                <div class="festival-card bg-white rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.3s">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://media-files.abidjan.net/photo/sabor%20(10).jpg" 
+                             alt="Carnaval d'Abidjan" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">URBAIN</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Carnaval d'Abidjan</h3>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>
+                            Abidjan, quartier du Plateau
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Défilé coloré et musical à travers les rues de la capitale économique, mélangeant traditions et modernité.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-orange-600 font-medium">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                Mars/Avril
+                            </div>
+                            <a href="./carnaval_abidjan.html" class="text-orange-600 hover:text-orange-700 font-medium flex items-center">
+                                En savoir plus
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Festival 4 -->
+                <div class="festival-card bg-white rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.4s">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://voiedefemme.net/wp-content/uploads/2022/01/fete-de-ligname-2-1170x658.jpg" 
+                             alt="Fêtes des ignames" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Fêtes des ignames</h3>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>
+                            Plusieurs localités
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Célébration traditionnelle marquant la fin de la récolte des ignames avec danses, offrandes et partage communautaire.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-orange-600 font-medium">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                Juillet/Août
+                            </div>
+                            <a href="./fetes_ignames.html" class="text-orange-600 hover:text-orange-700 font-medium flex items-center">
+                                En savoir plus
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Festival 5 -->
+                <div class="festival-card bg-white rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.5s">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://voiedefemme.net/wp-content/uploads/2023/04/D-3-1.jpg" 
+                             alt="Festival du Dipri" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">TRADITIONNEL</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Festival du Dipri</h3>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>
+                            Gomon, près d'Abidjan
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Rituel de purification annuel du peuple Abidji avec des cérémonies nocturnes et des démonstrations de forces mystiques.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-orange-600 font-medium">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                Avril
+                            </div>
+                            <a href="./festival_dipri.html" class="text-orange-600 hover:text-orange-700 font-medium flex items-center">
+                                En savoir plus
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Festival 6 -->
+                <div class="festival-card bg-white rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.6s">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://media-files.abidjan.net/photo/64eme-anniversaire-de-l-independance-de-la-cote-d-ivoire-a-grand-bassam-les_av2n18iff9w.jpg" 
+                             alt="Fête de l'Indépendance" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <span class="bg-orange-500 text-white text-xs font-semibold px-3 py-1 rounded-full">NATIONAL</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Fête de l'Indépendance</h3>
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="fas fa-map-marker-alt text-orange-500 mr-2"></i>
+                            Tout le pays
+                        </div>
+                        <p class="text-gray-600 mb-4">
+                            Célébrations nationales du 7 août avec défilés militaires, spectacles culturels et feux d'artifice dans toutes les grandes villes.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-orange-600 font-medium">
+                                <i class="fas fa-calendar-alt mr-2"></i>
+                                7 Août
+                            </div>
+                            <a href="./fete_indépendance.html" class="text-orange-600 hover:text-orange-700 font-medium flex items-center">
+                                En savoir plus
+                                <i class="fas fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 animate-in" style="transition-delay: 0.7s">
+                <a href="" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-orange-600 hover:bg-orange-700 transition transform hover:scale-105">
+                    Voir tous les festivals
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section id="calendrier" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center animate-in">Calendrier culturel</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Janvier -->
+                <div class="calendar-month bg-orange-50 rounded-xl p-6 text-center animate-in" style="transition-delay: 0.1s">
+                    <h3 class="text-xl font-bold text-orange-700 mb-4">Janvier</h3>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">1</span>
+                            <span>Jour de l'An - Célébrations dans tout le pays</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">15-20</span>
+                            <span>Festival des Arts et Cultures de San Pedro</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Février -->
+                <div class="calendar-month bg-orange-50 rounded-xl p-6 text-center animate-in" style="transition-delay: 0.2s">
+                    <h3 class="text-xl font-bold text-orange-700 mb-4">Février</h3>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">Varie</span>
+                            <span>Festival des Masques de Man - Danses traditionnelles</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">Fin</span>
+                            <span>Fête du Génie d'Assinie - Rituels traditionnels</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Mars -->
+                <div class="calendar-month bg-orange-50 rounded-xl p-6 text-center animate-in" style="transition-delay: 0.3s">
+                    <h3 class="text-xl font-bold text-orange-700 mb-4">Mars</h3>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">8</span>
+                            <span>Journée Internationale de la Femme - Événements partout</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">Varie</span>
+                            <span>Carnaval d'Abidjan - Défilés colorés</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Avril -->
+                <div class="calendar-month bg-orange-50 rounded-xl p-6 text-center animate-in" style="transition-delay: 0.4s">
+                    <h3 class="text-xl font-bold text-orange-700 mb-4">Avril</h3>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">Varie</span>
+                            <span>Festival du Dipri - Rituels mystiques</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">Années paires</span>
+                            <span>FESTIMA - Festival International des Masques</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Mai -->
+                <div class="calendar-month bg-orange-50 rounded-xl p-6 text-center animate-in" style="transition-delay: 0.5s">
+                    <h3 class="text-xl font-bold text-orange-700 mb-4">Mai</h3>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">1</span>
+                            <span>Fête du Travail - Manifestations culturelles</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">15-20</span>
+                            <span>Festival des Danses Traditionnelles de Dabou</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Juin -->
+                <div class="calendar-month bg-orange-50 rounded-xl p-6 text-center animate-in" style="transition-delay: 0.6s">
+                    <h3 class="text-xl font-bold text-orange-700 mb-4">Juin</h3>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">Varie</span>
+                            <span>Festival des Cultures Krou - Sud-ouest du pays</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">Fin</span>
+                            <span>Fête de la Musique - Concerts dans toutes les villes</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Juillet -->
+                <div class="calendar-month bg-orange-50 rounded-xl p-6 text-center animate-in" style="transition-delay: 0.7s">
+                    <h3 class="text-xl font-bold text-orange-700 mb-4">Juillet</h3>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">Début</span>
+                            <span>Fête des Ignames - Célébrations dans plusieurs villages</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">15-20</span>
+                            <span>Festival des Arts N'Zassa - Art contemporain</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Août -->
+                <div class="calendar-month bg-orange-50 rounded-xl p-6 text-center animate-in" style="transition-delay: 0.8s">
+                    <h3 class="text-xl font-bold text-orange-700 mb-4">Août</h3>
+                    <ul class="space-y-3 text-left">
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">7</span>
+                            <span>Fête de l'Indépendance - Célébrations nationales</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2 py-1 rounded mr-3">15</span>
+                            <span>Fête de l'Assomption - Processions religieuses</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 animate-in" style="transition-delay: 0.9s">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-orange-600 text-base font-medium rounded-md shadow-sm text-orange-600 hover:bg-orange-50 transition">
+                    Télécharger le calendrier complet (PDF)
+                    <i class="fas fa-download ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center animate-in">Expériences vécues</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md animate-in" style="transition-delay: 0.1s">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sophie Martin" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Sophie Martin</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Le Festival des Masques de Man a été le point fort de notre voyage. Les danses, les costumes et l'énergie des performances étaient tout simplement incroyables. Une expérience culturelle inoubliable !"
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        Festival des Masques - Mars 2023
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md animate-in" style="transition-delay: 0.2s">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Thomas Leroy" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Thomas Leroy</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "Le Carnaval d'Abidjan est une explosion de couleurs et de musique. L'ambiance dans les rues est électrique, entre traditions et modernité. À ne pas manquer si vous visitez la Côte d'Ivoire au printemps !"
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        Carnaval d'Abidjan - Avril 2023
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md animate-in" style="transition-delay: 0.3s">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Fatoumata Bamba" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Fatoumata Bamba</h4>
+                            <div class="flex text-amber-400 text-sm">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic mb-6">
+                        "En tant qu'Ivoirienne, je redécouvre mon pays à travers ses festivals. Le FESTIMA m'a particulièrement marquée par sa capacité à rassembler des cultures différentes autour de l'art du masque. Une vraie richesse !"
+                    </p>
+                    <div class="text-sm text-gray-500">
+                        FESTIMA - Avril 2022
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-orange-600 to-orange-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à vivre l'expérience ?</h2>
+                <p class="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
+                    Planifiez votre voyage pour assister à ces festivals uniques et immergez-vous dans la culture ivoirienne.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#" class="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md shadow-sm text-orange-700 bg-white hover:bg-gray-100 transition transform hover:scale-105">
+                        Contactez-nous
+                        <i class="fas fa-envelope ml-2"></i>
+                    </a>
+                    <a href="#" class="inline-flex items-center px-8 py-4 border border-white text-lg font-medium rounded-md shadow-sm text-white hover:bg-white/10 transition transform hover:scale-105">
+                        Voir nos circuits
+                        <i class="fas fa-route ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize animation on load
+        window.addEventListener('load', animateOnScroll);
+        // Animate on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>

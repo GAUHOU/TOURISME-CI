@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abidjan - La Manhattan de l'Afrique | Côte d'Ivoire Tourisme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(to right, rgba(124, 45, 18, 0.8), rgba(194, 65, 12, 0.7));
+        }
+        
+        .animate-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .animate-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .flag-stripe {
+            height: 33.33%;
+            width: 100%;
+        }
+        
+        .flag-orange { background-color: #f77f00; }
+        .flag-white { background-color: white; }
+        .flag-green { background-color: #009a44; }
+        
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-500 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <div class="w-6 h-6 mr-2 overflow-hidden rounded-sm">
+                            <div class="flag-stripe flag-orange"></div>
+                            <div class="flag-stripe flag-white"></div>
+                            <div class="flag-stripe flag-green"></div>
+                        </div>
+                        <span class="text-xl font-bold text-orange-800">Côte d'Ivoire Tourisme</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="./index.html" class="text-gray-600 hover:text-orange-500 font-medium transition">Accueil</a>
+                    <a href="#" class="text-orange-700 hover:text-orange-500 font-medium transition">Destinations</a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500 font-medium transition">Culture</a>
+                    <a href="#" class="text-gray-600 hover:text-orange-500 font-medium transition">Contact</a>
+                </div>
+                <div class="flex items-center md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-orange-500">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 md:pt-32 md:pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 gradient-overlay"></div>
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605000813856-1a0f9aae7964?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')] parallax"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center animate-in">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                    Abidjan
+                </h1>
+                <p class="text-xl md:text-2xl text-orange-200 font-medium mb-8">
+                    La "Manhattan de l'Afrique" avec ses gratte-ciel, ses marchés animés et sa vie nocturne trépidante
+                </p>
+                <div class="flex justify-center">
+                    <div class="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                        À ne pas manquer
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex lg:items-start lg:gap-12">
+                <div class="lg:w-2/3 animate-in">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Découvrez Abidjan</h2>
+                    <div class="w-20 h-1 bg-orange-500 mb-6"></div>
+                    
+                    <div class="prose max-w-none text-gray-600 mb-8">
+                        <p class="text-lg">
+                            Abidjan, la capitale économique de la Côte d'Ivoire, est une métropole vibrante et cosmopolite souvent surnommée la "Manhattan de l'Afrique" en raison de ses impressionnants gratte-ciel qui dominent le paysage urbain.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Le Plateau, cœur économique</h3>
+                        <p>
+                            Le quartier du Plateau, situé sur une presqu'île, concentre les bâtiments administratifs et les sièges des grandes entreprises. Ne manquez pas la majestueuse Cathédrale Saint-Paul, œuvre de l'architecte italien Aldo Spirito, dont la silhouette unique domine la ville.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Marchés animés</h3>
+                        <p>
+                            Pour une immersion dans la vie locale, explorez les marchés colorés comme le marché de Treichville ou le marché artisanal de Cocody. Vous y découvrirez des tissus traditionnels (pagnes), des sculptures sur bois, des bijoux artisanaux et des épices aux senteurs envoûtantes.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Vie nocturne trépidante</h3>
+                        <p>
+                            Abidjan est réputée pour sa vie nocturne animée. Les quartiers de Marcory et de Treichville regorgent de maquis (restaurants-bars typiques) où vous pourrez déguster des spécialités locales comme l'attiéké ou le garba, tout en écoutant du coupé-décalé, musique ivoirienne emblématique.
+                        </p>
+                        
+                        <h3 class="text-xl font-bold text-gray-900 mt-8">Lagune Ébrié</h3>
+                        <p>
+                            La lagune Ébrié offre une pause nature au cœur de la ville. Des croisières en pirogue ou en bateau permettent de découvrir Abidjan sous un angle différent, avec ses villages de pêcheurs et ses vues imprenables sur les gratte-ciel.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-orange-50 p-6 rounded-xl border-l-4 border-orange-500 animate-in" style="transition-delay: 0.2s">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3 flex items-center">
+                            <i class="fas fa-lightbulb text-orange-500 mr-3"></i>
+                            Bon à savoir
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                                <span>Langue : Français (officielle), mais le nouchi (argot local) est très répandu</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                                <span>Monnaie : Franc CFA (XOF)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                                <span>Décalage horaire : UTC+0 (même heure qu'à Londres)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-500 mt-1 mr-2"></i>
+                                <span>Climat : Tropical humide avec deux saisons des pluies (avril-juillet et octobre-novembre)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/3 mt-12 lg:mt-0 animate-in" style="transition-delay: 0.1s">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden sticky top-6">
+                        <div class="p-6 border-b border-gray-200">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Informations pratiques</h3>
+                            <div class="space-y-4">
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-map-marker-alt text-orange-500 mr-3"></i>
+                                        Localisation
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Sud de la Côte d'Ivoire, bordée par l'océan Atlantique et la lagune Ébrié</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-users text-orange-500 mr-3"></i>
+                                        Population
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Environ 5 millions d'habitants (aire urbaine)</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-plane text-orange-500 mr-3"></i>
+                                        Aéroport
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Aéroport international Félix-Houphouët-Boigny (ABJ), situé à 16 km du centre-ville</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900 flex items-center">
+                                        <i class="fas fa-utensils text-orange-500 mr-3"></i>
+                                        Spécialités
+                                    </h4>
+                                    <p class="text-gray-600 mt-1">Attiéké, garba, alloco, kedjenou, poulet braisé</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Activités à ne pas manquer</h3>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-camera text-orange-600"></i>
+                                    </div>
+                                    <span>Visite du Plateau et ses gratte-ciel</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-umbrella-beach text-orange-600"></i>
+                                    </div>
+                                    <span>Excursion aux plages de Grand-Bassam (classée UNESCO)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-shopping-bag text-orange-600"></i>
+                                    </div>
+                                    <span>Marché artisanal de Cocody</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-music text-orange-600"></i>
+                                    </div>
+                                    <span>Soirée dans un maquis pour découvrir le coupé-décalé</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="bg-orange-100 p-2 rounded-full mr-3 flex-shrink-0">
+                                        <i class="fas fa-ship text-orange-600"></i>
+                                    </div>
+                                    <span>Croisière sur la lagune Ébrié</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center animate-in">Galerie photo</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.1s">
+                    <img src="https://prod.cdn-medias.jeuneafrique.com/cdn-cgi/image/q=auto,f=auto,metadata=none,width=1256,height=628,fit=cover/https://prod.cdn-medias.jeuneafrique.com/medias/2022/09/26/jad20220923-objectif-abidjan-ouverture-ville-mutation-1256x628-1664188554.jpg" 
+                         alt="Skyline d'Abidjan" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Skyline d'Abidjan avec ses gratte-ciel</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.2s">
+                    <img src="https://media-files.abidjan.net/photo/situation-post-resultats10(1).jpg" 
+                         alt="Marché de Treichville" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Marché animé de Treichville</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.3s">
+                    <img src="https://avalone.africa/extrastorage/listing-uploads/cover/2024/01/st-paul-s-cathedral.jpg" 
+                         alt="Cathédrale Saint-Paul" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Cathédrale Saint-Paul, œuvre architecturale</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.4s">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/31/fc/07/skinny-baby.jpg?w=500&h=500&s=1" 
+                         alt="Vie nocturne" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Vie nocturne animée dans un maquis</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.5s">
+                    <img src="https://www.portabidjan.ci/sites/default/files/actualite/dji_0214_copie.jpg" 
+                         alt="Lagune Ébrié" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Croisière sur la lagune Ébrié</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.6s">
+                    <img src="https://media-files.abidjan.net/photo/plage(1).jpg" 
+                         alt="Plage de Grand-Bassam" 
+                         class="w-full h-64 object-cover">
+                    <div class="p-4 bg-white">
+                        <p class="text-sm text-gray-600">Plage de Grand-Bassam à proximité</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center animate-in">Localisation</h2>
+            
+            <div class="rounded-xl overflow-hidden shadow-lg animate-in" style="transition-delay: 0.2s">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1010291.0766231164!2d-4.3520827!3d5.3599517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1f8e5b6e9a415%3A0x4c9d30c1a5a5b5b5!2sAbidjan%2C%20C%C3%B4te%20d&#39;Ivoire!5e0!3m2!1sfr!2sfr!4v1620000000000!5m2!1sfr!2sfr" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                    class="w-full h-96">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-orange-600 to-orange-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à découvrir Abidjan ?</h2>
+                <p class="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">
+                    Contactez-nous pour organiser votre séjour sur mesure dans la capitale économique ivoirienne.
+                </p>
+                <a href="#" class="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-md shadow-sm text-orange-700 bg-white hover:bg-gray-100 transition transform hover:scale-105">
+                    Planifier mon voyage
+                    <i class="fas fa-paper-plane ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize animation on load
+        window.addEventListener('load', animateOnScroll);
+        // Animate on scroll
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>
